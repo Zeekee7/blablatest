@@ -18,10 +18,6 @@ pipeline {
             } else {
                 echo 'I execute elsewhere'
             }
-            #steps {
-            #    sh 'ls -l'
-            #    sh 'cp blablatest/* /usr/share/nginx/html/'
-            #}
         }
     }
 }
