@@ -13,10 +13,15 @@ pipeline {
             }
         }
         stage('copy') {
-            steps {
-                sh 'ls -l'
-                sh 'cp blablatest/* /usr/share/nginx/html/'
+            if (env.BRANCH_NAME == 'master') {
+                echo 'I only execute on the master branch'
+            } else {
+                echo 'I execute elsewhere'
             }
+            #steps {
+            #    sh 'ls -l'
+            #    sh 'cp blablatest/* /usr/share/nginx/html/'
+            #}
         }
     }
 }
