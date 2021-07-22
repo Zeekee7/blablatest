@@ -16,7 +16,7 @@ pipeline {
             when { expression { env.BRANCH_NAME != 'master'} }
             steps {
                 echo 'Deploy to non prod env'
-                sh 'cp blablatest/test.html /usr/share/nginx/html/'
+                sh 'cp blablatest/test.html /usr/share/nginx/html/test/intex.html'
             } 
         }
         stage('Deploy Prod') {
