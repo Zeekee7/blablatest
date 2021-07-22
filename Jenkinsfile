@@ -12,12 +12,11 @@ pipeline {
                 sh 'git clone https://github.com/Zeekee7/blablatest.git'
             }
         }
-        stage('copy') {
-            if (env.BRANCH_NAME == 'master') {
+        stage('Deploy Prod') {
+            when { env.BRANCH_NAME == 'master'} 
+            steps {
                 echo 'I only execute on the master branch'
-            } else {
-                echo 'I execute elsewhere'
-            }
+            } 
         }
     }
 }
