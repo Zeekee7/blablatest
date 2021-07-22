@@ -24,7 +24,7 @@ pipeline {
             steps {
                 echo 'Deploy to production'
                 input "Deploy to prod?"
-                sh 'cp blablatest/test.html /usr/share/nginx/html/index.html
+                sh 'cp blablatest/test.html /usr/share/nginx/html/index.html'
             } 
         }
     }
