@@ -15,13 +15,16 @@ pipeline {
         stage('Deploy NonProd') {
             when { expression { env.BRANCH_NAME != 'master'} }
             steps {
-                echo 'I only execute on other then master'
+                echo 'Deploy to non prod env'
+                sh 'cp blablatest/test.html /usr/share/nginx/html/'
             } 
         }
         stage('Deploy Prod') {
             when { expression { env.BRANCH_NAME == 'master'} }
             steps {
-                echo 'I only execute on the master branch'
+                echo 'Deploy to production'
+                input "Deploy to prod?"
+                sh 'cp blablatest/test.html /usr/share/nginx/html/index.html
             } 
         }
     }
