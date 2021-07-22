@@ -13,7 +13,7 @@ pipeline {
             }
         }
         stage('Deploy Prod') {
-            when { env.BRANCH_NAME == 'master'} 
+            when { expression { env.BRANCH_NAME == 'master'} }
             steps {
                 echo 'I only execute on the master branch'
             } 
